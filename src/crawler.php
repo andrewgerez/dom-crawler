@@ -1,7 +1,9 @@
 <?php
 
 require 'vendor/autoload.php';
+require 'src/DomCrawler.php';
 
+use DomCrawler\Crawler\DomCrawler;
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
 use Dotenv\Dotenv;
@@ -17,15 +19,11 @@ $client = new Client([
   ],
 ]);
 
-$response = $client->request('GET', $url);
-
-$html = $response->getBody();
-
 $crawler = new Crawler();
-$crawler->addHtmlContent($html);
 
-$elements = $crawler->filter($element);
+$domCrawler = new DomCrawler($client, $crawler);
+$trackedElements = $domCrawler->crawl($url, $element);
 
-foreach ($elements as $element) {
-  echo $element->textContent . PHP_EOL;
+foreach ($trackedElements as $element) {
+  echo $element . PHP_EOL;
 }
