@@ -1,0 +1,17 @@
+{
+    "name": "andrewgerez/dom-crawler",
+    "description": "Project that extracts information from the DOM",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Andrewgerez\\SearchCourses\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Andrew Gerez",
+            "email": "andrewgerez18@gmail.com"
+        }
+    ],
+    "require": {}
+}
