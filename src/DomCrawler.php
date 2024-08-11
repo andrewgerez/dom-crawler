@@ -1,6 +1,6 @@
 <?php
 
-namespace DomCrawler\Crawler;
+namespace Andrew\DomCrawler;
 
 use GuzzleHttp\ClientInterface;
 

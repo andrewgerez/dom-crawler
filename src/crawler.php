@@ -1,9 +1,8 @@
 <?php
 
 require 'vendor/autoload.php';
-require 'src/DomCrawler.php';
 
-use DomCrawler\Crawler\DomCrawler;
+use Andrew\DomCrawler\DomCrawler;
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
 use Dotenv\Dotenv;
